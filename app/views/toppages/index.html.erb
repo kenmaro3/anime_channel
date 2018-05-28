@@ -3,7 +3,9 @@
     <div class="cover-inner">
       <div class="cover-contents">
         <h1>いいアニメは、共有しよう</h1>
-        <a href="" class="btn btn-success btn-lg">AnimeChanelを始める</a>
+        <% unless logged_in? %>
+          <a href="" class="btn btn-success btn-lg">AnimeChanelを始める</a>
+        <% end %>
       </div>
     </div>
   </div>
