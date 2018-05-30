@@ -8,7 +8,14 @@
               <img src="<%= item.image_url %>" alt="" >
             </div>
             <div class="panel-body">
-              <p class="item-title"><%= link_to("この画像を選ぶ", new_post_path)%></p>
+                          
+              
+              <%= form_tag(new_post_path, method: :get, class: "form-inline") do %>
+                <%= hidden_field_tag(:url, item.url) %>
+                <%= hidden_field_tag(:image_url, item.image_url) %>
+                <%= submit_tag("この画像を選ぶ", class: 'btn btn-success btn-lg') %>
+              <% end %>
+              
             </div>
           </div>
         </div>

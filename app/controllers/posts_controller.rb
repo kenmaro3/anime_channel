@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   
   def new
     @post = current_user.posts.build
+    @post_image_url = params[:image_url]
+    @post_url = params[:url]
   end
   
   def create

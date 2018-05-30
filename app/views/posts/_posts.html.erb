@@ -14,7 +14,11 @@
           
         </div>
         <%= render 'likes/favorite_button', post: post %>
-        <p>コメント <%=counts_comments(post) %> 件</p>
+        
+        <div>
+          <p>いいね <%=counts_likes(post) %> 件,   コメント <%=counts_comments(post) %> 件</p>
+        </div>
+        
         
         
         <div>

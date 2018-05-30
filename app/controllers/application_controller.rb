@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   def counts(user)
     @count_posts = user.posts.count
-    @count_likes = user.favorites.count
+    
     
   end  
   
@@ -11,7 +11,11 @@ class ApplicationController < ActionController::Base
     @count_comments = post.mentioned.count
   end
   
-  helper_method :counts_comments
+  def counts_likes(post)
+    @couns_likes = post.favorited.count
+  end
+  
+  helper_method :counts_comments, :counts_likes
   
   include SessionsHelper
   

@@ -1,7 +1,23 @@
-<% if logged_in? %>
-  <div class="row">
 
-    <div class="col-xs-8">
+  
+
+
+ 
+
+<% if logged_in? %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <div class="user-profile">
+      <div class="icon text-center">
+        <img src="<%= @post_image_url %>" alt="" class="img-circle">
+      </div>
+      <div class="name text-center">
+        
+      </div>
+    </div>
+  </aside>
+      <div class="col-xs-8">
     	<%= form_for(@post) do |f| %>
         <div class="form-group">
           <%= f.text_area :title, class: 'form-control', :placeholder => "Enter the title"%>
@@ -36,8 +52,11 @@
 
         <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
       <% end %>    	
+      
+      <p><%= @post_image_url %></p>
     </div>
-  </div>
+</div>
+
 <% else %>
 
 <% end %>

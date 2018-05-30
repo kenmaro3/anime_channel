@@ -27,9 +27,16 @@
           <%= render("comments/comments", comments: @comments) %>
         </div>
         
-        <div>
-          <%= render("comments/comment_form" , comment: @comment) %>
-        </div>
+        <div class="form-group">
+	        <%= form_for(@comment) do |f| %>
+		        <%= f.hidden_field(:post_id, :value => @post.id) %>
+		        <%= f.label(:comment, "コメント")%>
+  	        <%= f.text_field(:content, class:"form-control") %>
+  	        <%= f.submit 'Comment', class: 'btn btn-primary btn-xs'  %>
+        	<% end %>
+	
+</div>
+
         
         
       </div>
