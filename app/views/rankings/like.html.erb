@@ -1,0 +1,27 @@
+<h1>いいねランキング</h1>
+<% if @posts.present? %>
+  <div class="row">
+    <% @posts.each_with_index do |post, index| %>
+      <div class="item">
+        <div class="col-md-3 col-sm-4 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-heading text-center">
+              <img src="<%= post.image_url %>" alt="" >
+            </div>
+            <div class="panel-body">
+              <p class="item-title"><%= link_to post.title, post %></p>
+              <div class="buttons text-center">
+                <% if logged_in? %>
+                  <%= render 'likes/favorite_button', post: post %>
+                <% end %>
+              </div>
+            </div>
+            <div class="panel-footer">
+              <p class="text-center"><%= index+1 %>位: <%= @ranking_counts[post.id] %> いいね</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

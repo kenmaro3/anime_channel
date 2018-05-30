@@ -11,4 +11,7 @@
   </div>
 <% end %>
 
-<p>テスト</p>
+
+<% if logged_in? %>
+  <%= render 'posts/posts', posts: @posts %>
+<% end %>

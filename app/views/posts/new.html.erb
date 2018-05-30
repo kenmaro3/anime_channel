@@ -1,0 +1,43 @@
+<% if logged_in? %>
+  <div class="row">
+
+    <div class="col-xs-8">
+    	<%= form_for(@post) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :title, class: 'form-control', :placeholder => "Enter the title"%>
+        </div>      
+        <div class="form-group">
+          <%= f.text_area :comment, class: 'form-control',  :placeholder => "Enter the comment"%>
+        </div>
+        
+        <div class="form-group">
+          <%= f.text_area :laugh, class: 'form-control',  :placeholder => "Laugh"%>
+        </div>
+        
+        <div class="form-group">
+          <%= f.text_area :moved, class: 'form-control',  :placeholder => "Moved"%>
+        </div>
+        
+        <div class="form-group">
+          <%= f.text_area :excit, class: 'form-control',  :placeholder => "Excited"%>
+        </div>
+        
+        <div class="form-group">
+          <%= f.text_area :graphic, class: 'form-control',  :placeholder => "Graphic"%>
+        </div>
+        
+        <div class="form-group">
+          <%= f.text_area :plot, class: 'form-control',  :placeholder => "Plot"%>
+        </div>
+        
+        <div class="form-group">
+          <%= f.text_area :recommend, class: 'form-control',  :placeholder => "Recoomend"%>
+        </div>
+
+        <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+      <% end %>    	
+    </div>
+  </div>
+<% else %>
+
+<% end %>

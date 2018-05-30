@@ -1,6 +1,3 @@
-
-
-
 <div class="row">
   <aside class="col-md-4">
     <div class="user-profile">
@@ -18,6 +15,6 @@
       <li class="<%= 'active' if current_page?(likes_user_path(@user)) %>"><%= link_to likes_user_path(@user) do %>Likes <span class="badge"><%= @count_likes %></span><% end %></li>
       
     </ul>
-    <%= render 'posts/posts', posts: @posts %>
+    <%= render 'posts/posts', posts: @favorite_posts %>
   </div>
 </div>

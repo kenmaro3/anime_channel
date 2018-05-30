@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
-  before_action :require_user_logged_in, only: [:show]
+  before_action :require_user_logged_in, only: [:show, :likes]
   
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+    @post = current_user.posts.build
+    @posts = current_user.posts.order("created_at DESC").page(params[:page])
+    counts(@user)
   end
 
   def new
@@ -21,6 +24,12 @@ class UsersController < ApplicationController
       render(:new)
     end
   end
+  
+  def likes
+    @user = current_user
+    @favorite_posts = current_user.favorites.order("created_at DESC").page(params[:page])
+    counts(@user)
+  end  
   
   private
   
