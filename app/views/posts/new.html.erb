@@ -27,36 +27,118 @@
         </div>
         
         <div class="form-group">
-          <%= f.text_area :laugh, class: 'form-control',  :placeholder => "Laugh"%>
+          <p>笑えるアニメですか？</p>
+          <%#= f.text_area :laugh, class: 'form-control',  :placeholder => "Laugh"%>
+          <%= f.hidden_field :laugh, id: :laugh_rating %>
+          <div id='star-rating1'></div>
+          
+          
+        
+        <div class="form-group">
+          <p>感動できるアニメですか？</p>
+          <%#= f.text_area :moved, class: 'form-control',  :placeholder => "Moved"%>
+          <%= f.hidden_field :moved, id: :moved_rating %>
+          <div id='star-rating2'></div>    
+          
+
         </div>
         
         <div class="form-group">
-          <%= f.text_area :moved, class: 'form-control',  :placeholder => "Moved"%>
+          <p>興奮するアニメですか？</p>
+          <%#= f.text_area :excit, class: 'form-control',  :placeholder => "Excited"%>
+          <%= f.hidden_field :excit, id: :excit_rating %>
+          <div id='star-rating3'></div>        
         </div>
         
         <div class="form-group">
-          <%= f.text_area :excit, class: 'form-control',  :placeholder => "Excited"%>
+          <p>グラフィックはどうですか？</p>
+          <%#= f.text_area :graphic, class: 'form-control',  :placeholder => "Graphic"%>
+          <%= f.hidden_field :graphic, id: :graphic_rating %>
+          <div id='star-rating4'></div>        
         </div>
         
         <div class="form-group">
-          <%= f.text_area :graphic, class: 'form-control',  :placeholder => "Graphic"%>
+          <p>話の展開はどうですか？</p>
+          <%#= f.text_area :plot, class: 'form-control',  :placeholder => "Plot"%>
+          <%= f.hidden_field :plot, id: :plot_rating %>
+          <div id='star-rating5'></div>        
         </div>
         
         <div class="form-group">
-          <%= f.text_area :plot, class: 'form-control',  :placeholder => "Plot"%>
-        </div>
-        
-        <div class="form-group">
-          <%= f.text_area :recommend, class: 'form-control',  :placeholder => "Recoomend"%>
+          <p>総合的におすすめ度は？</p>
+          <%#= f.text_area :recommend, class: 'form-control',  :placeholder => "Recoomend"%>
+          <%= f.hidden_field :recommend, id: :recommend_rating %>
+          <div id='star-rating6'></div>        
         </div>
 
         <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
       <% end %>    	
       
-      <p><%= @post_image_url %></p>
+      <
     </div>
 </div>
+
+
+
+<script>
+$('#star-rating1').raty({
+path: '/assets/',
+click: function(score, e) {
+$("#laugh_rating").val(score)
+}
+});
+</script>
+</div>
+
+
+<script>
+$('#star-rating2').raty({
+path: '/assets/',
+click: function(score, e) {
+$("#moved_rating").val(score)
+}
+});
+</script>
+
+<script>
+$('#star-rating3').raty({
+path: '/assets/',
+click: function(score, e) {
+$("#excit_rating").val(score)
+}
+});
+</script>
+
+<script>
+$('#star-rating4').raty({
+path: '/assets/',
+click: function(score, e) {
+$("#graphic_rating").val(score)
+}
+});
+</script>
+
+<script>
+$('#star-rating5').raty({
+path: '/assets/',
+click: function(score, e) {
+$("#plot_rating").val(score)
+}
+});
+</script>
+
+<script>
+$('#star-rating6').raty({
+path: '/assets/',
+click: function(score, e) {
+$("#recommend_rating").val(score)
+}
+});
+</script>
+
+
 
 <% else %>
 
 <% end %>
+
