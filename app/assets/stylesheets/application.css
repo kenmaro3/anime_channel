@@ -67,3 +67,30 @@ p.item-title {
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
+.toppage-title{
+  font-weight: bold;
+  padding-bottom: 30px;
+}
+
+.sidebar-container{
+  background-color: #F7F7D4;
+}
+
+.sidebar-container h4{
+  padding:10px;
+}
+
+.sidebar-container .animeSeasonBox{
+  font-size:12px;
+}
+
+.sidebar-container .animeSeasonTtl{
+  font-size:14px;
+}
+
+.animeSeasonImg{
+   width:150px;
+   margin:0 auto;
+   text-align:center;
+}

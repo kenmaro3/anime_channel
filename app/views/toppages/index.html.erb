@@ -11,7 +11,20 @@
   </div>
 <% end %>
 
+<% content_for :sidebar do %>
+<p>test sidebar</p>
+
+<% end %>
 
 <% if logged_in? %>
-  <%= render 'posts/posts', posts: @posts %>
+  <h2 class="toppage-title">ユーザーからのレビュー</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-8">
+      <%= render 'posts/posts', posts: @posts %>
+    </div>
+    <div class="toppage-sidebar col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-1">
+      <%= render("sidebar") %>
+    </div>
+  </div>
+  
 <% end %>
