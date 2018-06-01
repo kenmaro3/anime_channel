@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def new
     @post = current_user.posts.build
     @post_image_url = params[:image_url]
+    @post.image_url = @post_image_url
     @post_url = params[:url]
   end
   
@@ -38,7 +39,7 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:title,:comment,:laugh,:moved,:excit,:graphic,:plot,:recommend,:user_id)
+    params.require(:post).permit(:title,:comment,:laugh,:moved,:excit,:graphic,:plot,:recommend,:user_id, :image_url)
   end
   
   def correct_user

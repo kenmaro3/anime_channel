@@ -10,14 +10,16 @@
   <aside class="col-md-4">
     <div class="user-profile">
       <div class="icon text-center">
-        <img src="<%= @post_image_url %>" alt="" class="img-circle">
+        <img src="<%= @post_image_url %>" alt="" class="new-post-image">
       </div>
       <div class="name text-center">
         
       </div>
     </div>
   </aside>
-      <div class="col-xs-8">
+  
+  <div class="rating-wrapper text-center">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-lg-6">
     	<%= form_for(@post) do |f| %>
         <div class="form-group">
           <%= f.text_area :title, class: 'form-control', :placeholder => "Enter the title"%>
@@ -70,12 +72,17 @@
           <%= f.hidden_field :recommend, id: :recommend_rating %>
           <div id='star-rating6'></div>        
         </div>
+        
+        <%= f.hidden_field(:image_url, :value => @post_image_url) %>
 
         <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
       <% end %>    	
       
-      <
-    </div>
+     
+    </div>    
+    
+  </div>
+
 </div>
 
 

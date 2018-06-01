@@ -94,3 +94,51 @@ p.item-title {
    margin:0 auto;
    text-align:center;
 }
+
+@media(max-width: 1000px){
+  .toppage-title{
+    font-size: larger;
+  }
+}
+
+@media(max-width: 700px) {
+  .toppage-title{
+    font-size: medium;
+  }
+}
+
+.new-post-image{
+  width:50%;
+}
+
+.new-post-image{
+  padding-bottom: 20px;
+}
+
+.post-image-disp{
+  width: 20%;
+  padding:0;
+}
+
+@media(max-width: 1000px){
+  .ranking-title{
+    font-size: larger;
+  }
+  .media-list h3{
+    font-size:larger;
+  }
+}
+
+
+@media(max-width: 700px) {
+  .ranking-title{
+    font-size: medium;
+  }
+  .media-list h3{
+    font-size: medium;
+  }
+}
+
+.media-list{
+  padding:5px;
+}
