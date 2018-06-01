@@ -127,6 +127,11 @@ p.item-title {
   .media-list h3{
     font-size:larger;
   }
+  
+  .post-image-disp{
+    width: 100%;
+    padding:0;
+  }
 }
 
 
@@ -136,6 +141,10 @@ p.item-title {
   }
   .media-list h3{
     font-size: medium;
+  }
+  .post-image-disp{
+    width: 70%;
+    padding:0;
   }
 }
 
