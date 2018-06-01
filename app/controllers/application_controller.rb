@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
   
   def counts_likes(post)
-    @couns_likes = post.favorited.count
+    @counts_likes = post.favorited.count
   end
   
   helper_method :counts_comments, :counts_likes
