@@ -1,7 +1,7 @@
 <div class="row">
  <ul class="media-list">
   <% posts.each do |post| %>
-    <li class="media">
+    <li class="media post-media">
       <div class="media-left">
         <img class="media-object img-rounded" src="<%= gravatar_url(post.user, options = { size: 50 }) %>" alt="">
       </div>

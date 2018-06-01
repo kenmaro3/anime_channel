@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @post = current_user.posts.build
     @posts = current_user.posts.order("created_at DESC").page(params[:page])
     counts(@user)
-    counts_likes(@post)
+    
   end
 
   def new
@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     @user = current_user
     @favorite_posts = current_user.favorites.order("created_at DESC").page(params[:page])
     counts(@user)
+    
   end  
   
   private
