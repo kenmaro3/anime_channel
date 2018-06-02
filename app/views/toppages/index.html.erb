@@ -4,7 +4,8 @@
       <div class="cover-contents">
         <h1>いいアニメは、共有しよう</h1>
         <% unless logged_in? %>
-          <a href="" class="btn btn-success btn-lg">AnimeChanelを始める</a>
+          <%#a href="" class="btn btn-success btn-lg">AnimeChanelを始める</a%>
+          <%=link_to('AnimeChanelを始める',signup_path,class:"btn btn-success btn-lg")%>
         <% end %>
       </div>
     </div>
