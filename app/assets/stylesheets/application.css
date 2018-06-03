@@ -132,6 +132,10 @@ p.item-title {
     width: 50%;
     padding:10px;
   }
+  
+  .rader-chart{
+
+  }
 }
 
 
@@ -146,6 +150,11 @@ p.item-title {
     width: 100%;
     padding:10px;
   }
+  
+  .rader-chart{
+
+  
+  }
 }
 
 .media-list{
@@ -155,3 +164,4 @@ p.item-title {
 .post-media{
   padding:10px;
 }
+

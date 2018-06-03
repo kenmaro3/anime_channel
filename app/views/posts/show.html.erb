@@ -21,6 +21,71 @@
           <% end %>
         </div>
         
+        
+<div class="row">     
+<div class="rader-chart col-md-4 col-md-offset-3 col-lg-4 col-lg-offset-3 col-xs-10 col-xs-offset-0 col-sm-10 col-sm-offset-1">        
+  <canvas id="chart"></canvas>
+</div>  
+</div> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"></script>
+  <script>
+    var ctx = document.getElementById('chart').getContext('2d');
+    
+    var myChart = new Chart(ctx, {
+      type: 'radar',
+      
+      data: {
+        labels: ['Laugh', 'Moved', 'Excited', 'Graphic', 'Plot'],
+        datasets: [{
+          label: 'ユーザーの評価',
+          data: [<%= @post.laugh%>, <%= @post.moved%>,<%= @post.excit%>, <%= @post.graphic%>,<%= @post.plot%>],
+          backgroundColor: "rgba(153,255,51,0.4)",
+          fillColor: "rgba(151,187,205,0.5)",
+          strokeColor: "rgba(151,187,205,1)",
+          pointColor: "rgba(151,187,205,1)", 
+          pointStrokeColor: "#fff",
+          
+   
+        }],
+
+      },
+      
+      options: {
+        
+        scale: {
+           pointLabels: {
+                  fontSize: 14, //フォントサイズ
+                  
+                },
+          ticks: {
+            beginAtZero: true,
+            max: 5,
+            min: 0,
+            stepSize: 1,
+            
+          },
+
+        },
+      animation: {
+        // アニメーションにかかる秒数(ミリ秒)
+        duration: 2000,
+        // アニメーションの種類
+        easing: "easeInQuad",
+      }    
+    
+      }        
+    });
+    
+
+  </script>
+
+        
+        
+        
+        
+        
+        
+        
         <p></p>
         <p></p>
         <div>
